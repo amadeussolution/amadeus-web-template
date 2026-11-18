@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Amadeus Solutions: creación de imágenes, edición de video y contenido empresarial con inteligencia artificial.">
+  <title>Amadeus Solutions | Creatividad que impacta</title>
+  <style>
+    :root {
+      --red: #ed1728;
+      --red-dark: #8f0712;
+      --black: #080808;
+      --panel: #141414;
+      --white: #f7f7f7;
+      --muted: #b8b8b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 90%); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(5,5,5,.94);
+      border-bottom: 1px solid #292929;
+      backdrop-filter: blur(12px);
+    }
+    nav {
+      min-height: 78px; display: flex; align-items: center;
+      justify-content: space-between; gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      width: 48px; height: 48px; border: 2px solid var(--red);
+      border-radius: 50%; display: grid; place-items: center;
+      color: white; font-size: 25px; font-weight: 900;
+      box-shadow: 0 0 18px #ed172855;
+    }
+    .brand-name { font-weight: 900; letter-spacing: 1px; line-height: 1.1; }
+    .brand-name span { display: block; color: var(--red); }
+    .nav-links { display: flex; gap: 24px; align-items: center; font-size: 14px; }
+    .nav-links a:hover { color: var(--red); }
+    .btn {
+      display: inline-block; padding: 13px 22px; border-radius: 7px;
+      background: var(--red); color: white; font-weight: 800;
+      transition: .2s; border: 1px solid var(--red);
+    }
+    .btn:hover { background: #bd0d1b; transform: translateY(-2px); }
+    .btn-outline { background: transparent; border-color: #777; }
+    .hero {
+      min-height: 590px; display: flex; align-items: center;
+      background:
+        radial-gradient(ellipse at 80% 45%, #8e071d66, transparent 42%),
+        linear-gradient(110deg, #080808 25%, #190609 100%);
+      border-bottom: 1px solid #321015;
+      padding: 90px 0;
+    }
+    .eyebrow {
+      color: #ff6873; text-transform: uppercase; letter-spacing: 3px;
+      font-size: 12px; font-weight: 800; margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(42px, 7vw, 78px); line-height: .99; max-width: 800px; }
+    h1 span, .red { color: var(--red); }
+    .hero p { color: #d0d0d0; max-width: 620px; font-size: 18px; margin: 25px 0 30px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    section { padding: 85px 0; }
+    .section-title { text-align: center; margin-bottom: 42px; }
+    .section-title h2 { font-size: clamp(30px, 5vw, 46px); line-height: 1.1; }
+    .section-title p { color: var(--muted); margin-top: 12px; }
+    .services {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .service {
+      background: linear-gradient(145deg, #191919, #0d0d0d);
+      border: 1px solid #393939; border-radius: 13px;
+      padding: 27px; min-height: 235px;
+      transition: .25s;
+    }
+    .service:hover { border-color: var(--red); transform: translateY(-5px); }
+    .service-icon {
+      width: 52px; height: 52px; display: grid; place-items: center;
+      border-radius: 12px; background: #ed17281c;
+      border: 1px solid #ed172866; font-size: 25px; margin-bottom: 20px;
+    }
+    .service h3 { font-size: 21px; margin-bottom: 10px; }
+    .service p { color: var(--muted); font-size: 14px; }
+    .service ul { margin: 14px 0 0 18px; color: #ddd; font-size: 14px; }
+    .service li { margin: 5px 0; }
+    .highlight {
+      background: linear-gradient(120deg, #25070b, #101010 65%);
+      border-top: 1px solid #55121b; border-bottom: 1px solid #55121b;
+    }
+    .features {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;
+    }
+    .feature {
+      text-align: center; padding: 22px 14px;
+      border: 1px solid #333; border-radius: 10px;
+      background: #111;
+    }
+    .feature b { display: block; color: var(--red); margin: 8px 0; }
+    .feature span { font-size: 28px; }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 40px; align-items: center;
+    }
+    .about-panel {
+      border: 1px solid #4b171d; border-radius: 15px; padding: 32px;
+      background: radial-gradient(circle at top right, #6c0c183d, transparent 55%), #111;
+    }
+    .about-panel h3 { font-size: 28px; margin-bottom: 14px; }
+    .about-panel p { color: var(--muted); margin-bottom: 15px; }
+    .contact {
+      text-align: center;
+      background: radial-gradient(ellipse at center, #5e0b173d, transparent 65%);
+    }
+    .contact h2 { font-size: clamp(32px, 5vw, 48px); }
+    .contact p { color: var(--muted); margin: 15px auto 28px; max-width: 600px; }
+    footer { border-top: 1px solid #292929; padding: 25px 0; color: #999; font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .whatsapp-float {
+      position: fixed; right: 22px; bottom: 22px; z-index: 20;
+      width: 58px; height: 58px; border-radius: 50%;
+      display: grid; place-items: center; background: #20c767;
+      color: white; font-size: 27px; font-weight: bold;
+      box-shadow: 0 5px 25px #0009;
+    }
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .services { grid-template-columns: repeat(2, 1fr); }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 520px; }
+    }
+    @media (max-width: 540px) {
+      .services { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr 1fr; }
+      section { padding: 65px 0; }
+      .hero p { font-size: 16px; }
+      .btn { padding: 12px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#inicio">
+        <div class="brand-mark">A</div>
+        <div class="brand-name">AMADEUS <span>SOLUTIONS</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a class="btn" href="https://wa.me/573234578479?text=Hola%20Amadeus%20Solutions,%20quiero%20informaci%C3%B3n">Cotizar ahora ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="eyebrow">Creatividad · Tecnología · Resultados</div>
+      <h1>TRANSFORMAMOS<br>TUS IDEAS EN<br><span>RESULTADOS.</span></h1>
+      <p>
+        Creamos contenido visual, imágenes impactantes y videos profesionales
+        con herramientas creativas e inteligencia artificial. Llevamos tu marca
+        a otro nivel.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#servicios">Descubre nuestros servicios</a>
+        <a class="btn btn-outline" href="https://wa.me/573234578479?text=Hola,%20quiero%20cotizar%20un%20servicio">Hablemos por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">Lo que hacemos</div>
+        <h2>NUESTROS <span class="red">SERVICIOS</span></h2>
+        <p>Soluciones creativas para marcas, negocios y creadores de contenido.</p>
+      </div>
+
+      <div class="services">
+        <article class="service">
+          <div class="service-icon">🎬</div>
+          <h3>Edición de video</h3>
+          <p>Transformamos tus ideas en videos que captan la atención.</p>
+          <ul>
+            <li>Subtítulos animados y multilingües</li>
+            <li>Efectos, sonido y música</li>
+            <li>Documentales y videos promocionales</li>
+            <li>Formatos para redes sociales</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">🧠</div>
+          <h3>Creación de imágenes con IA</h3>
+          <p>Damos vida a tus ideas en diferentes estilos gráficos.</p>
+          <ul>
+            <li>Imágenes hiperrealistas</li>
+            <li>Animación 2D y 3D</li>
+            <li>Anime, pixel art y estilos personalizados</li>
+            <li>Retoque y mejora de imágenes</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">▶️</div>
+          <h3>Miniaturas para YouTube</h3>
+          <p>Diseños visuales pensados para destacar tu contenido.</p>
+          <ul>
+            <li>Diseños personalizados</li>
+            <li>Alto impacto visual</li>
+            <li>Miniaturas para videos y canales</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">🎙️</div>
+          <h3>Audio y doblaje con IA</h3>
+          <p>Contenido de audio para conectar con diferentes audiencias.</p>
+          <ul>
+            <li>Locuciones y narraciones</li>
+            <li>Doblaje multilingüe</li>
+            <li>Mejora de calidad de audio</li>
+            <li>Clonación de voz e imagen con autorización</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">🚀</div>
+          <h3>Contenido empresarial</h3>
+          <p>Publicidad visual que presenta tus productos y fortalece tu marca.</p>
+          <ul>
+            <li>Anuncios para productos</li>
+            <li>Modelos de marca</li>
+            <li>Creatividades para campañas</li>
+            <li>Contenido para redes sociales</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">✨</div>
+          <h3>Diseño y edición creativa</h3>
+          <p>Mejoramos tus imágenes y convertimos conceptos en piezas visuales.</p>
+          <ul>
+            <li>Retoque y restauración</li>
+            <li>Montajes y composiciones</li>
+            <li>Adaptación a formatos digitales</li>
+            <li>Diseños publicitarios</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">Nuestra forma de trabajar</div>
+        <h2>IDEAS QUE <span class="red">IMPACTAN</span></h2>
+        <p>Creatividad y tecnología al servicio de tu proyecto.</p>
+      </div>
+      <div class="features">
+        <div class="feature"><span>⚡</span><b>ENTREGA ÁGIL</b><small>Procesos eficientes y organizados.</small></div>
+        <div class="feature"><span>🎯</span><b>PERSONALIZACIÓN</b><small>Diseños alineados con tu marca.</small></div>
+        <div class="feature"><span>✦</span><b>CALIDAD VISUAL</b><small>Atención a los detalles.</small></div>
+        <div class="feature"><span>🌎</span><b>MÚLTIPLES FORMATOS</b><small>Contenido para distintas plataformas.</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <div class="container about-grid">
+      <div>
+        <div class="eyebrow">Conoce Amadeus</div>
+        <h2 style="font-size:clamp(32px,5vw,48px);line-height:1.1">
+          CREATIVIDAD SIN LÍMITES. <span class="red">SOLUCIONES REALES.</span>
+        </h2>
+      </div>
+      <div class="about-panel">
+        <h3>AMADEUS SOLUTIONS</h3>
+        <p>
+          Somos una marca enfocada en la creación de contenido digital,
+          diseño visual y soluciones creativas para empresas, emprendedores
+          y creadores.
+        </p>
+        <p>
+          Nuestro objetivo es ayudarte a comunicar mejor tus ideas y presentar
+          tu marca con una imagen profesional.
+        </p>
+        <a class="btn" href="https://wa.me/573234578479?text=Hola,%20quiero%20conocer%20sus%20servicios">Conversemos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="eyebrow">Tu próximo proyecto comienza aquí</div>
+      <h2>HAGAMOS ALGO <span class="red">INCREÍBLE.</span></h2>
+      <p>Cuéntanos qué tienes en mente. Estamos listos para ayudarte a convertir tu idea en contenido que destaque.</p>
+      <a class="btn" href="https://wa.me/573234578479?text=Hola%20Amadeus%20Solutions,%20quiero%20solicitar%20una%20cotizaci%C3%B3n">
+        Escríbenos por WhatsApp ↗
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Amadeus Solutions. Todos los derechos reservados.</span>
+    <span>Creatividad que conecta y transforma.</span>
+  </div>
+</footer>
+
+<a class="whatsapp-float" aria-label="Contactar por WhatsApp"
+   href="https://wa.me/573234578479?text=Hola%20Amadeus%20Solutions">
+  ☎
+</a>
+
+</body>
+</html>
